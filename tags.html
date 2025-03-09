@@ -3,109 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A simple Netflix-like website with login, purchase, and movie sections.">
-    <meta name="keywords" content="Netflix, streaming, movies, login, purchase">
-    <meta name="author" content="Your Name">
-    <meta property="og:title" content="Netflix Clone">
-    <meta property="og:description" content="Watch movies online with a simple login system.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="YOUR_WEBSITE_URL">
-    <meta property="og:image" content="YOUR_IMAGE_URL">
-    <title>Netflix Clone</title>
+    <meta name="description" content="A website featuring Pokémon cards, their details, and images.">
+    <meta name="keywords" content="Pokémon, Pokémon Cards, Trading Cards, TCG">
+    <meta name="author" content="NIEL ALVIN SASAN">
+    <title>Pokémon Card Collection</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #141414;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-        }
-        .navbar {
-            background-color: #e50914;
-            padding: 10px;
-            text-align: center;
-        }
-        .navbar h1 {
-            color: #fff;
-            margin: 0;
-        }
-        .container {
-            padding: 20px;
-            max-width: 600px;
-            margin: 20px auto;
-            text-align: center;
-            background-color: #222;
-            border-radius: 10px;
-        }
-        .container.hidden {
-            display: none;
-        }
-        input, button {
-            padding: 10px;
-            margin: 10px 0;
-            width: 90%;
-            border: none;
-            border-radius: 5px;
-        }
-        button {
-            background-color: #e50914;
-            color: white;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #b30000;
-        }
-        iframe {
-            width: 100%;
-            height: 200px;
-            border: none;
-        }
+        * { box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; padding: 10px; background: linear-gradient(to bottom, red, orange); }
+        .header { padding: 30px; text-align: center; background: white; }
+        .header h1 { font-size: 50px; }
+        .topnav { overflow: hidden; background-color: #333; }
+        .topnav a { float: left; display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none; }
+        .topnav a:hover { background-color: #ddd; color: black; }
+        .leftcolumn { float: left; width: 75%; }
+        .rightcolumn { float: left; width: 25%; padding-left: 20px; }
+        .card { background-color: white; padding: 20px; margin-top: 20px; }
+        .row:after { content: ""; display: table; clear: both; }
+        .footer { padding: 20px; text-align: center; background: #ddd; margin-top: 20px; }
+        .pokemon-card img { width: 100%; height: auto; }
+        @media screen and (max-width: 800px) { .leftcolumn, .rightcolumn { width: 100%; padding: 0; } }
+        @media screen and (max-width: 400px) { .topnav a { float: none; width: 100%; } }
     </style>
 </head>
 <body>
-
-    <!-- Navbar -->
-    <div class="navbar">
-        <h1>Netflix</h1>
+    <div class="header">
+        <h1>Pokémon Card Collection</h1>
+        <p>Discover and explore amazing Pokémon cards!</p>
     </div>
-
-    <!-- Purchase Section -->
-    <div id="purchase-section" class="container">
-        <h2>Purchase Account</h2>
-        <input type="email" id="purchase-email" placeholder="Enter your email">
-        <input type="password" id="purchase-password" placeholder="Enter your password">
-        <button onclick="purchaseAccount()">Purchase for $20</button>
+    <div class="topnav">
+        <a href="#">Home</a>
+        <a href="#">Cards</a>
+        <a href="#">About</a>
+        <a href="#" style="float:right">Contact</a>
     </div>
-
-    <!-- Login Section -->
-    <div id="login-section" class="container hidden">
-        <h2>Log In</h2>
-        <input type="email" id="login-email" placeholder="Enter your email">
-        <input type="password" id="login-password" placeholder="Enter your password">
-        <button onclick="login()">Log In</button>
+    <div class="row">
+        <div class="leftcolumn">
+            <div class="card pokemon-card">
+                <h2>Pikachu</h2>
+                <h5>Electric Type</h5>
+                <img src="https://static.standard.co.uk/2024/11/12/10/49/1pikachu.jpeg?width=1200" alt="Pikachu Card">
+                <p>A powerful Electric-type Pokémon known for its speed and Thunderbolt attack.</p>
+            </div>
+            <div class="card pokemon-card">
+                <h2>Charizard</h2>
+                <h5>Fire/Flying Type</h5>
+                <img src="https://m.media-amazon.com/images/I/71nbfl-JklS._AC_SL1024_.jpg" alt="Charizard Card">
+                <p>One of the most iconic Pokémon, Charizard boasts intense fire-based attacks.</p>
+            </div>
+        </div>
+        <div class="rightcolumn">
+            <div class="card">
+                <h2>About</h2>
+                <p>Explore the best Pokémon cards and their details in our collection.</p>
+            </div>
+            <div class="card">
+                <h3>Popular Cards</h3>
+                <img src="https://assetsio.gnwcdn.com/Pok%C3%A9mon-Trading-Card-Game-Pocket---Blastoise-ex-deck.jpg?width=1200&height=1200&fit=crop&quality=100&format=png&enable=upscale&auto=webp" alt="Blastoise Card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTciyQjfjY2iAGSNa7vIQzwFbjRzTf7eb0EEA&s" alt="Mewtwo Card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNWPno1tozrf_vP49opKQds4yebxc-clek8w&s" alt="Gyarados Card">
+            </div>
+        </div>
     </div>
-
-    <!-- Movies Section -->
-    <div id="movies-section" class="container hidden">
-        <h2>Your Movies</h2>
-        <iframe src="https://www.youtube.com/embed/43Nc4mJzOUs" allowfullscreen></iframe>
-        <iframe src="https://www.youtube.com/embed/pNQ2R_i7lAg" allowfullscreen></iframe>
-        <iframe src="https://www.youtube.com/embed/lQBmZBJCYCY" allowfullscreen></iframe>
+    <div class="footer">
+        <h2>Pokémon Card Collection &copy; 2025</h2>
     </div>
-
-    <script>
-        function purchaseAccount() {
-            alert("Account purchased successfully!");
-            document.getElementById("purchase-section").classList.add("hidden");
-            document.getElementById("login-section").classList.remove("hidden");
-        }
-
-        function login() {
-            alert("Logged in successfully!");
-            document.getElementById("login-section").classList.add("hidden");
-            document.getElementById("movies-section").classList.remove("hidden");
-        }
-    </script>
-
 </body>
 </html>
