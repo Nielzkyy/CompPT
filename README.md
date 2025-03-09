@@ -1,2 +1,111 @@
-# CompPT
-META TAGS
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A simple Netflix-like website with login, purchase, and movie sections.">
+    <meta name="keywords" content="Netflix, streaming, movies, login, purchase">
+    <meta name="author" content="Your Name">
+    <meta property="og:title" content="Netflix Clone">
+    <meta property="og:description" content="Watch movies online with a simple login system.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="YOUR_WEBSITE_URL">
+    <meta property="og:image" content="YOUR_IMAGE_URL">
+    <title>Netflix Clone</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #141414;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #e50914;
+            padding: 10px;
+            text-align: center;
+        }
+        .navbar h1 {
+            color: #fff;
+            margin: 0;
+        }
+        .container {
+            padding: 20px;
+            max-width: 600px;
+            margin: 20px auto;
+            text-align: center;
+            background-color: #222;
+            border-radius: 10px;
+        }
+        .container.hidden {
+            display: none;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px 0;
+            width: 90%;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #e50914;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #b30000;
+        }
+        iframe {
+            width: 100%;
+            height: 200px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <h1>Netflix</h1>
+    </div>
+
+    <!-- Purchase Section -->
+    <div id="purchase-section" class="container">
+        <h2>Purchase Account</h2>
+        <input type="email" id="purchase-email" placeholder="Enter your email">
+        <input type="password" id="purchase-password" placeholder="Enter your password">
+        <button onclick="purchaseAccount()">Purchase for $20</button>
+    </div>
+
+    <!-- Login Section -->
+    <div id="login-section" class="container hidden">
+        <h2>Log In</h2>
+        <input type="email" id="login-email" placeholder="Enter your email">
+        <input type="password" id="login-password" placeholder="Enter your password">
+        <button onclick="login()">Log In</button>
+    </div>
+
+    <!-- Movies Section -->
+    <div id="movies-section" class="container hidden">
+        <h2>Your Movies</h2>
+        <iframe src="https://www.youtube.com/embed/43Nc4mJzOUs" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/pNQ2R_i7lAg" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/lQBmZBJCYCY" allowfullscreen></iframe>
+    </div>
+
+    <script>
+        function purchaseAccount() {
+            alert("Account purchased successfully!");
+            document.getElementById("purchase-section").classList.add("hidden");
+            document.getElementById("login-section").classList.remove("hidden");
+        }
+
+        function login() {
+            alert("Logged in successfully!");
+            document.getElementById("login-section").classList.add("hidden");
+            document.getElementById("movies-section").classList.remove("hidden");
+        }
+    </script>
+
+</body>
+</html>
